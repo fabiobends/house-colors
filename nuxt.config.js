@@ -14,6 +14,11 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  publicRuntimeConfig: {
+    defaultEmail: process.env.DEFAULT_EMAIL,
+    defaultPassword: process.env.DEFAULT_PASSWORD,
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 

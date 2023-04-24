@@ -21,9 +21,13 @@ export default {
   name: 'Login',
   data() {
     return {
-      email: process.env.DEFAULT_EMAIL ?? '',
-      password: process.env.DEFAULT_PASSWORD ?? '',
+      email: '',
+      password: '',
     }
+  },
+  mounted() {
+    this.email = this.$config.defaultEmail
+    this.password = this.$config.defaultPassword
   },
   methods: {
     onSubmit() {
