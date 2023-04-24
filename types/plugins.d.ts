@@ -1,4 +1,4 @@
-import { LoginParams } from './index'
+import { LoginParams } from './login'
 
 declare module 'vue/types/vue' {
   interface Vue {

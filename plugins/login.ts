@@ -1,11 +1,6 @@
-import { Context } from '@nuxt/types'
-import { Inject } from '@nuxt/types/app'
-import type {
-  AxiosResponse,
-  LoginBody,
-  LoginParams,
-  LoginResponse,
-} from '../types'
+import { Context, Inject } from '@nuxt/types/app'
+import { AxiosResponse } from 'axios'
+import type { LoginBody, LoginResponse, LoginParams } from '../types/login'
 
 export default ({ $axios, app, redirect }: Context, inject: Inject) => {
   inject('login', async ({ email, password }: LoginParams) => {
