@@ -8,7 +8,26 @@ export interface Entity {
 }
 
 export interface EntityResponse extends AppResponse {
+  data: Entity
+}
+
+export interface EntityParams {
+  name: string
+  active: number
+}
+
+export interface EntityBody {
+  house_rules: EntityParams
+}
+
+export interface EntitiesResponse extends AppResponse {
   data: {
     entities: Array<Entity>
   }
+}
+
+export interface HouseColor {
+  id: number
+  name: string
+  color: string
 }
