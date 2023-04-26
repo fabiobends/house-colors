@@ -10,33 +10,31 @@
           <input
             v-model="email"
             class="form-control"
-            :class="{ 'is-invalid': email.length < 1 }"
+            :class="{ 'is-invalid': !isSuccessful }"
             type="text"
             placeholder="Enter a email"
             required
           />
-          <p v-show="email.length < 1" class="invalid-feedback">
-            Please the email should not be empty.
-          </p>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input
             v-model="password"
             class="form-control"
-            :class="{ 'is-invalid': password.length < 1 || !isSuccessful }"
+            :class="{ 'is-invalid': !isSuccessful }"
             type="password"
             placeholder="Enter a password"
             required
           />
-          <p v-show="password.length < 1" class="invalid-feedback">
-            Please the password should not be empty.
-          </p>
           <p v-show="!isSuccessful" class="invalid-feedback mt-3">
             Email or password is incorrect.
           </p>
         </div>
-        <button type="submit" class="btn btn-block btn-primary my-3">
+        <button
+          :disabled="!email.length || !password.length"
+          type="submit"
+          class="btn btn-block btn-primary my-3"
+        >
           Submit
         </button>
         <small>
@@ -55,8 +53,8 @@ export default {
   name: 'Login',
   data() {
     return {
-      email: ' ',
-      password: ' ',
+      email: '',
+      password: '',
       isSuccessful: true,
     }
   },
