@@ -60,6 +60,9 @@ export default {
       isSuccessful: true,
     }
   },
+  head: {
+    title: 'Login',
+  },
   mounted() {
     this.email = this.$config.defaultEmail ?? ''
     this.password = this.$config.defaultPassword ?? ''

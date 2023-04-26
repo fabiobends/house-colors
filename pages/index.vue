@@ -54,6 +54,9 @@ export default {
     // unfortunately Vue/Nuxt 2.x can't recognized "Context" type before loading the page, that's why the type is `any`
     await context.store.dispatch('getAll', context)
   },
+  head: {
+    title: 'Home',
+  },
 }
 </script>
 
